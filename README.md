@@ -40,7 +40,7 @@ I'm currently doing my **Umschulung (retraining) to become a Fachinformatiker** 
 
 ## Outside of tech
 
-I like watching series, and when I have time, playing video games.
+I like watching series, reading Comics and when I have time, playing video games.
 
 ## Projects
 
