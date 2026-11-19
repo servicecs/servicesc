@@ -6,7 +6,6 @@ I'm currently doing my **Umschulung (retraining) to become a Fachinformatiker** 
 
 - **WordPress**: building and managing websites
 - **HTML & CSS**: structure and styling of web pages
-- **Linux**: working in the terminal and administering systems
 - **Hardware**: building, fixing and understanding PCs
 
 ## Education
