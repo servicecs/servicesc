@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yane Laboski - Portfolio</title>
+    <title>Laboski Yane - Portfolio</title>
 
     <!-- Tailwind CSS линк -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -143,6 +143,21 @@
 </head>
 <body>
 
+    <!-- Горна навигација со Laboski Yane -->
+    <header class="border-b border-white/15 bg-slate-950/35 backdrop-blur-md">
+        <div class="max-w-[1100px] mx-auto px-5 py-4 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold text-white tracking-tight">
+                Laboski Yane<span class="text-sky-400">.</span>
+            </a>
+            <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-sky-100">
+                <a href="#skills" class="hover:text-sky-300 transition">What I Know</a>
+                <a href="#learning" class="hover:text-sky-300 transition">Learning</a>
+                <a href="#projects" class="hover:text-sky-300 transition">Projects</a>
+                <a href="#education" class="hover:text-sky-300 transition">Education</a>
+            </nav>
+        </div>
+    </header>
+
     <div class="glaven-kontejner">
 
         <!-- ГОРЕН БЛОК: Текст од лева страна, Слика од десна страна -->
@@ -152,7 +167,7 @@
                     Germany • Umschulung Fachinformatiker
                 </span>
                 <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
-                    Hi, I'm Yane 👋
+                    Hi, I'm Yane
                 </h1>
                 <p class="text-lg text-sky-100 leading-relaxed">
                     I'm currently doing my <strong>Umschulung (retraining)</strong> to become a <strong>Fachinformatiker</strong> in Germany, and I'm learning something new every day.
@@ -164,7 +179,7 @@
 
             <!-- СЛИКА ОД ДЕСНА СТРАНА -->
             <div class="hero-slika">
-                <img src="Screenshot 2026-11-19 094048.png" alt="Yane Laboski">[cite: 3]
+                <img src="profil.png" alt="Laboski Yane">
             </div>
         </section>
 
@@ -172,7 +187,7 @@
         <section class="karticki-grid">
 
             <!-- Картичка 1: What I know -->
-            <div class="karticka">
+            <div id="skills" class="karticka">
                 <h2>💻 What I Know</h2>
                 <ul class="lista-stavki">
                     <li><strong>WordPress:</strong> Building and managing websites</li>
@@ -182,7 +197,7 @@
             </div>
 
             <!-- Картичка 2: Education -->
-            <div class="karticka">
+            <div id="education" class="karticka">
                 <h2>🎓 Education</h2>
                 <ul class="lista-stavki">
                     <li><strong>Retraining (Umschulung):</strong> Fachinformatiker in Germany</li>
@@ -203,7 +218,7 @@
             </div>
 
             <!-- Картичка 4: What I'm learning right now -->
-            <div class="karticka">
+            <div id="learning" class="karticka">
                 <h2>🚀 What I'm Learning Right Now</h2>
                 <div>
                     <span class="tag">Networking (IPv4, IPv6, subnetting)</span>
@@ -223,7 +238,7 @@
             </div>
 
             <!-- Картичка 5: Projects -->
-            <div class="karticka">
+            <div id="projects" class="karticka">
                 <h2>🛠️ Projects</h2>
                 <ul class="lista-stavki">
                     <li><strong>Yane's Aggregator:</strong> A tech news aggregator</li>
