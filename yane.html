@@ -1,293 +1,252 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yane Laboski | Aspiring Fachinformatiker</title>
-    
-    <!-- 1. Официјален Tailwind CSS -->
+    <title>Yane Laboski - Portfolio</title>
+
+    <!-- Tailwind CSS линк -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- 2. Овде директно се користат Tailwind CSS класи преку @apply -->
-    <style type="text/tailwindcss">
-        @layer components {
-            .bento-card {
-                @apply bg-slate-900/70 backdrop-blur-md border border-slate-800 rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:border-sky-500/40 hover:shadow-xl hover:shadow-sky-500/5;
-            }
-            .skill-badge {
-                @apply px-3.5 py-1.5 rounded-xl bg-slate-800/90 border border-slate-700/80 text-sm font-medium text-slate-200 hover:border-sky-400/50 hover:text-sky-300 transition;
-            }
-            .section-heading {
-                @apply text-2xl font-bold text-white tracking-tight flex items-center gap-2.5 mb-6;
-            }
+
+    <!-- Класичен CSS за плава позадина, картички и распоред -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #0c4a6e 0%, #1e3a8a 50%, #172554 100%);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .glaven-kontejner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Горна секција: текст лево, слика десно */
+        .hero-blok {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-tekst {
+            flex: 1 1 500px;
+        }
+
+        .hero-slika {
+            flex: 0 0 250px;
+            height: 260px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            margin-left: auto;
+        }
+
+        .hero-slika img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: bottom;
+        }
+
+        /* Мрежа од картички за текстот */
+        .karticki-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        .karticka {
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .karticka:hover {
+            transform: translateY(-5px);
+            background: rgba(15, 23, 42, 0.75);
+        }
+
+        .karticka h2 {
+            color: #7dd3fc;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 8px;
+        }
+
+        .lista-stavki {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lista-stavki li {
+            padding: 6px 0;
+            font-size: 15px;
+            color: #e0f2fe;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .lista-stavki li:last-child {
+            border-bottom: none;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(125, 211, 252, 0.4);
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin: 4px 4px 4px 0;
+        }
+
+        .kontakt-kopce {
+            display: inline-block;
+            margin-top: 15px;
+            background: #38bdf8;
+            color: #082f49;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .kontakt-kopce:hover {
+            background: #7dd3fc;
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-200 antialiased selection:bg-sky-500 selection:text-white">
+<body>
 
-    <!-- Позадински сјај (Tailwind CSS) -->
-    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full"></div>
-    </div>
+    <div class="glaven-kontejner">
 
-    <!-- Top Navigation Bar -->
-    <header class="sticky top-0 z-50 backdrop-blur-lg bg-slate-950/80 border-b border-slate-800/80">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="#" class="text-xl font-extrabold tracking-tight text-white">
-                Yane<span class="text-sky-400">.dev</span>
-            </a>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
-                <a href="#about" class="hover:text-white transition">About</a>
-                <a href="#skills" class="hover:text-white transition">Skills &amp; Learning</a>
-                <a href="#projects" class="hover:text-white transition">Projects</a>
-                <a href="#education" class="hover:text-white transition">Education</a>
-                <a href="#contact" class="px-4 py-2 rounded-xl bg-sky-500 text-slate-950 font-semibold hover:bg-sky-400 transition">
-                    Contact Me
+        <!-- ГОРЕН БЛОК: Текст од лева страна, Слика од десна страна -->
+        <section class="hero-blok">
+            <div class="hero-tekst">
+                <span class="inline-block bg-sky-400/20 text-sky-200 text-xs font-semibold px-3 py-1 rounded-full mb-3 border border-sky-300/30">
+                    Germany • Umschulung Fachinformatiker
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
+                    Hi, I'm Yane 👋
+                </h1>
+                <p class="text-lg text-sky-100 leading-relaxed">
+                    I'm currently doing my <strong>Umschulung (retraining)</strong> to become a <strong>Fachinformatiker</strong> in Germany, and I'm learning something new every day.
+                </p>
+                <a href="mailto:jane.laboski@gmail.com" class="kontakt-kopce">
+                    📧 jane.laboski@gmail.com
                 </a>
-            </nav>
-        </div>
-    </header>
+            </div>
 
-    <main class="max-w-6xl mx-auto px-6 py-10 space-y-16">
-
-        <!-- HERO SECTION (Распоред во 2 колони: Текст лево + Слика десно) -->
-        <section id="about" class="bento-card relative overflow-hidden">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                
-                <!-- Лева колона (7/12) -->
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                        Umschulung zum Fachinformatiker • Germany
-                    </div>
-
-                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                        Hi, I'm <span class="bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">Yane</span> 👋
-                    </h1>
-
-                    <p class="text-lg text-slate-300 leading-relaxed">
-                        I'm currently doing my <strong class="text-white">Umschulung (retraining)</strong> to become a <strong class="text-white">Fachinformatiker</strong> in Germany, building real-world IT skills and learning something new every day.
-                    </p>
-
-                    <div class="flex flex-wrap items-center gap-4 pt-2">
-                        <a href="#projects" class="px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-sky-500/25">
-                            Explore My Projects
-                        </a>
-                        <a href="mailto:jane.laboski@gmail.com" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold text-sm transition">
-                            📧 jane.laboski@gmail.com
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Десна колона: Твојата слика со модерен Tailwind рамка-ефект (5/12) -->
-                <div class="lg:col-span-5 flex justify-center lg:justify-end">
-                    <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-3xl bg-gradient-to-b from-sky-500/20 via-slate-800/60 to-slate-900 border border-slate-700/80 p-3 pb-0 overflow-hidden shadow-2xl flex items-end justify-center">
-                        <!-- Сјај зад сликата -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-sky-500/10 to-indigo-500/10"></div>
-                        <img src="profil.png" alt="Yane Laboski" class="relative z-10 w-full h-full object-contain object-bottom drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]">
-                    </div>
-                </div>
-
+            <!-- СЛИКА ОД ДЕСНА СТРАНА -->
+            <div class="hero-slika">
+                <img src="Screenshot 2026-11-19 094048.png" alt="Yane Laboski">[cite: 3]
             </div>
         </section>
 
-        <!-- BENTO GRID: What I Know + Languages + Outside of Tech -->
-        <section id="skills" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            
-            <!-- What I Know (7 колони) -->
-            <div class="lg:col-span-7 bento-card flex flex-col justify-between">
+        <!-- КАРТИЧКИ ЗА ТЕКСТОТ -->
+        <section class="karticki-grid">
+
+            <!-- Картичка 1: What I know -->
+            <div class="karticka">
+                <h2>💻 What I Know</h2>
+                <ul class="lista-stavki">
+                    <li><strong>WordPress:</strong> Building and managing websites</li>
+                    <li><strong>HTML &amp; CSS:</strong> Structure and styling of web pages</li>
+                    <li><strong>Hardware:</strong> Building, fixing and understanding PCs</li>
+                </ul>
+            </div>
+
+            <!-- Картичка 2: Education -->
+            <div class="karticka">
+                <h2>🎓 Education</h2>
+                <ul class="lista-stavki">
+                    <li><strong>Retraining (Umschulung):</strong> Fachinformatiker in Germany</li>
+                    <li><strong>University:</strong> Studied Informatics at the European University - Republic of North Macedonia (EURM)</li>
+                </ul>
+            </div>
+
+            <!-- Картичка 3: Languages I speak -->
+            <div class="karticka">
+                <h2>🌍 Languages I Speak</h2>
+                <ul class="lista-stavki">
+                    <li>🇲🇰 Macedonian (native)</li>
+                    <li>🇬🇧 English</li>
+                    <li>🇮🇹 Italian</li>
+                    <li>🇩🇪 German</li>
+                    <li>🗣️ Serbo-Croatian</li>
+                </ul>
+            </div>
+
+            <!-- Картичка 4: What I'm learning right now -->
+            <div class="karticka">
+                <h2>🚀 What I'm Learning Right Now</h2>
                 <div>
-                    <h2 class="section-heading">
-                        <span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span> What I Know
-                    </h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80">
-                            <span class="text-sky-400 font-mono text-xs font-bold uppercase">CMS</span>
-                            <h3 class="text-white font-bold mt-1">WordPress</h3>
-                            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Building and managing complete websites.</p>
-                        </div>
-                        <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80">
-                            <span class="text-indigo-400 font-mono text-xs font-bold uppercase">Frontend</span>
-                            <h3 class="text-white font-bold mt-1">HTML &amp; CSS</h3>
-                            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Clean structure and responsive web styling.</p>
-                        </div>
-                        <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80">
-                            <span class="text-emerald-400 font-mono text-xs font-bold uppercase">Systems</span>
-                            <h3 class="text-white font-bold mt-1">Hardware</h3>
-                            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Building, fixing, and diagnosing PCs.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Outside of Tech долу во истата картичка -->
-                <div class="mt-6 pt-5 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-sm">
-                    <span class="text-slate-400 font-medium">Outside of tech:</span>
-                    <div class="flex flex-wrap gap-2 text-xs font-medium text-slate-300">
-                        <span class="px-3 py-1 rounded-full bg-slate-800">🎬 Series</span>
-                        <span class="px-3 py-1 rounded-full bg-slate-800">📚 Comics</span>
-                        <span class="px-3 py-1 rounded-full bg-slate-800">🎮 Video Games</span>
-                    </div>
+                    <span class="tag">Networking (IPv4, IPv6, subnetting)</span>
+                    <span class="tag">Git and version control</span>
+                    <span class="tag">XML and web basics</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Databases</span>
+                    <span class="tag">PHP, HTML, CSS</span>
+                    <span class="tag">JSON</span>
+                    <span class="tag">Logic</span>
+                    <span class="tag">Virtualization</span>
+                    <span class="tag">Hardware</span>
+                    <span class="tag">OS</span>
+                    <span class="tag">Servers</span>
                 </div>
             </div>
 
-            <!-- Languages I Speak (5 колони) -->
-            <div class="lg:col-span-5 bento-card">
-                <h2 class="section-heading">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> Languages I Speak
-                </h2>
-                <div class="space-y-2.5 text-sm">
-                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950/50 border border-slate-800/60">
-                        <span class="font-medium text-white">🇲🇰 Macedonian</span>
-                        <span class="text-xs px-2.5 py-0.5 rounded-md bg-emerald-500/10 text-emerald-400 font-semibold">Native</span>
-                    </div>
-                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950/50 border border-slate-800/60">
-                        <span class="font-medium text-white">🇬🇧 English</span>
-                        <span class="text-xs text-slate-400">Fluent</span>
-                    </div>
-                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950/50 border border-slate-800/60">
-                        <span class="font-medium text-white">🇩🇪 German</span>
-                        <span class="text-xs text-slate-400">Professional / Umschulung</span>
-                    </div>
-                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950/50 border border-slate-800/60">
-                        <span class="font-medium text-white">🇮🇹 Italian</span>
-                        <span class="text-xs text-slate-400">Conversational</span>
-                    </div>
-                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950/50 border border-slate-800/60">
-                        <span class="font-medium text-white">🗣️ Serbo-Croatian</span>
-                        <span class="text-xs text-slate-400">Fluent</span>
-                    </div>
-                </div>
+            <!-- Картичка 5: Projects -->
+            <div class="karticka">
+                <h2>🛠️ Projects</h2>
+                <ul class="lista-stavki">
+                    <li><strong>Yane's Aggregator:</strong> A tech news aggregator</li>
+                    <li><strong>CryptoFun24:</strong> Live Crypto News &amp; Market Dashboard</li>
+                    <li><strong>Latest News Aggregator:</strong> Collects the latest headlines in one place</li>
+                </ul>
             </div>
 
-            <!-- What I'm Learning Right Now (Цела ширина - 12 колони) -->
-            <div class="lg:col-span-12 bento-card">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5">
-                    <h2 class="text-2xl font-bold text-white flex items-center gap-2.5">
-                        <span class="w-2.5 h-2.5 rounded-full bg-indigo-400"></span> What I'm Learning Right Now
-                    </h2>
-                    <span class="text-xs font-mono text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">
-                        Fachinformatiker Curriculum
-                    </span>
-                </div>
-                <div class="flex flex-wrap gap-2.5">
-                    <span class="skill-badge">🌐 Networking (IPv4, IPv6, Subnetting)</span>
-                    <span class="skill-badge">🔀 Git &amp; Version Control</span>
-                    <span class="skill-badge">🐍 Python</span>
-                    <span class="skill-badge">🗄️ SQL &amp; Databases</span>
-                    <span class="skill-badge">🐘 PHP, HTML &amp; CSS</span>
-                    <span class="skill-badge">📄 XML &amp; Web Basics</span>
-                    <span class="skill-badge">{ } JSON</span>
-                    <span class="skill-badge">🧠 Logic</span>
-                    <span class="skill-badge">☁️ Virtualization</span>
-                    <span class="skill-badge">🖥️ Hardware</span>
-                    <span class="skill-badge">⚙️ Operating Systems (OS)</span>
-                    <span class="skill-badge">🖧 Servers</span>
+            <!-- Картичка 6: Outside of tech -->
+            <div class="karticka">
+                <h2>🎮 Outside of Tech</h2>
+                <p class="text-sky-100 text-sm leading-relaxed">
+                    I like watching series, reading Comics and when I have time, playing video games.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/15 text-sm text-sky-200">
+                    <strong>Get in touch:</strong><br>
+                    📧 jane.laboski@gmail.com
                 </div>
             </div>
 
         </section>
 
-        <!-- PROJECTS SECTION (3 еднакви картички во ред) -->
-        <section id="projects" class="space-y-6">
-            <h2 class="section-heading">
-                <span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span> Featured Projects
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <!-- Project 1 -->
-                <article class="bento-card flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-2.5 py-1 rounded-lg bg-sky-500/10 text-sky-400 text-xs font-mono font-bold">01</span>
-                            <span class="text-xs text-slate-500">Tech Feed</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">Yane's Aggregator</h3>
-                        <p class="text-sm text-slate-400 mt-3 leading-relaxed">
-                            A curated tech news aggregator built to track the latest industry updates, tools, and developer stories.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-sky-400">
-                        <span>News Aggregator</span>
-                        <span>View Project →</span>
-                    </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="bento-card flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 text-xs font-mono font-bold">02</span>
-                            <span class="text-xs text-slate-500">Dashboard</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition">CryptoFun24</h3>
-                        <p class="text-sm text-slate-400 mt-3 leading-relaxed">
-                            Live Crypto News &amp; Market Dashboard delivering real-time cryptocurrency prices, trends, and breaking news.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-emerald-400">
-                        <span>Live Market Data</span>
-                        <span>View Project →</span>
-                    </div>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="bento-card flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-2.5 py-1 rounded-lg bg-indigo-500/10 text-indigo-400 text-xs font-mono font-bold">03</span>
-                            <span class="text-xs text-slate-500">Headlines</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition">Latest News Aggregator</h3>
-                        <p class="text-sm text-slate-400 mt-3 leading-relaxed">
-                            A fast, clean news aggregator that collects and organizes the latest headlines from multiple sources in one place.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-indigo-400">
-                        <span>Web App</span>
-                        <span>View Project →</span>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- EDUCATION SECTION (2 колони) -->
-        <section id="education" class="space-y-6">
-            <h2 class="section-heading">
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Education
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bento-card border-l-4 border-l-sky-500">
-                    <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Current • Germany</span>
-                    <h3 class="text-lg font-bold text-white mt-1">Retraining (Umschulung) to Fachinformatiker</h3>
-                    <p class="text-sm text-slate-400 mt-2">Comprehensive IT training covering networking, servers, databases, programming, and system administration.</p>
-                </div>
-                <div class="bento-card border-l-4 border-l-slate-700">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Higher Education</span>
-                    <h3 class="text-lg font-bold text-white mt-1">Informatics</h3>
-                    <p class="text-sm text-slate-400 mt-2">European University – Republic of North Macedonia (EURM)</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT FOOTER CARD -->
-        <section id="contact" class="bento-card bg-gradient-to-r from-slate-900 via-slate-900 to-sky-950/50 text-center py-12 space-y-4">
-            <h2 class="text-3xl font-extrabold text-white">Let's Connect</h2>
-            <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base">
-                Open to networking, IT discussions, and new opportunities in Germany.
-            </p>
-            <div class="pt-2">
-                <a href="mailto:jane.laboski@gmail.com" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-sky-500/20">
-                    <span>📧</span> jane.laboski@gmail.com
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-500">
-        <p>© 2026 Yane Laboski • Styled with Tailwind CSS</p>
-    </footer>
+    </div>
 
 </body>
 </html>
