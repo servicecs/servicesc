@@ -1,279 +1,267 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yane Laboski | Fachinformatiker Portfolio</title>
+    <title>Laboski Yane - Portfolio</title>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS линк -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Класичен CSS за распоред, картички, слика и анимации -->
+    <!-- Класичен CSS за плава позадина, картички и распоред -->
     <style>
         body {
-            background-color: #020617;
-            color: #e2e8f0;
+            background: linear-gradient(135deg, #0c4a6e 0%, #1e3a8a 50%, #172554 100%);
+            color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
         }
 
-        .karticka {
-            background: rgba(15, 23, 42, 0.75);
-            border: 1px solid #1e293b;
-            border-radius: 20px;
-            padding: 28px;
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        .glaven-kontejner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        .karticka:hover {
-            transform: translateY(-4px);
-            border-color: #38bdf8;
-            box-shadow: 0 12px 30px rgba(56, 189, 248, 0.12);
-        }
-
-        .profil-ramka {
-            width: 240px;
-            height: 240px;
+        /* Горна секција: текст лево, слика десно */
+        .hero-blok {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 24px;
-            background: linear-gradient(145deg, #0ea5e933, #0f172a);
-            border: 2px solid #38bdf866;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-tekst {
+            flex: 1 1 500px;
+        }
+
+        .hero-slika {
+            flex: 0 0 250px;
+            height: 260px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
             overflow: hidden;
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            margin-left: auto;
         }
 
-        .profil-ramka img {
+        .hero-slika img {
             width: 100%;
             height: 100%;
             object-fit: contain;
             object-position: bottom;
         }
 
-        .bedz {
-            display: inline-block;
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            color: #f1f5f9;
-            padding: 7px 14px;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s ease;
+        /* Мрежа од картички за текстот */
+        .karticki-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
         }
 
-        .bedz:hover {
-            border-color: #38bdf8;
-            color: #38bdf8;
+        .karticka {
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .karticka:hover {
+            transform: translateY(-5px);
+            background: rgba(15, 23, 42, 0.75);
+        }
+
+        .karticka h2 {
+            color: #7dd3fc;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 8px;
+        }
+
+        .lista-stavki {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lista-stavki li {
+            padding: 6px 0;
+            font-size: 15px;
+            color: #e0f2fe;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .lista-stavki li:last-child {
+            border-bottom: none;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(125, 211, 252, 0.4);
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin: 4px 4px 4px 0;
+        }
+
+        .kontakt-kopce {
+            display: inline-block;
+            margin-top: 15px;
+            background: #38bdf8;
+            color: #082f49;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .kontakt-kopce:hover {
+            background: #7dd3fc;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-sky-500 selection:text-white">
+<body>
 
-    <!-- Навигација -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/85 border-b border-slate-800">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Горна навигација со Laboski Yane -->
+    <header class="border-b border-white/15 bg-slate-950/35 backdrop-blur-md">
+        <div class="max-w-[1100px] mx-auto px-5 py-4 flex items-center justify-between">
             <a href="#" class="text-xl font-bold text-white tracking-tight">
-                Yane<span class="text-sky-400">.dev</span>
+                Laboski Yane<span class="text-sky-400">.</span>
             </a>
-            <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-slate-300">
-                <a href="#skills" class="hover:text-sky-400 transition">What I Know</a>
-                <a href="#learning" class="hover:text-sky-400 transition">Learning</a>
-                <a href="#projects" class="hover:text-sky-400 transition">Projects</a>
-                <a href="#education" class="hover:text-sky-400 transition">Education</a>
-                <a href="#contact" class="px-4 py-2 rounded-xl bg-sky-500 text-slate-950 font-semibold hover:bg-sky-400 transition">
-                    Contact
-                </a>
+            <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-sky-100">
+                <a href="#skills" class="hover:text-sky-300 transition">What I Know</a>
+                <a href="#learning" class="hover:text-sky-300 transition">Learning</a>
+                <a href="#projects" class="hover:text-sky-300 transition">Projects</a>
+                <a href="#education" class="hover:text-sky-300 transition">Education</a>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-6 py-10 space-y-12">
+    <div class="glaven-kontejner">
 
-        <!-- HERO ДЕЛ (Текст лево + Твојата слика десно) -->
-        <section class="karticka flex flex-col-reverse md:flex-row items-center justify-between gap-8">
-            <div class="space-y-5 flex-1">
-                <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-                    Umschulung zum Fachinformatiker • Germany
+        <!-- ГОРЕН БЛОК: Текст од лева страна, Слика од десна страна -->
+        <section class="hero-blok">
+            <div class="hero-tekst">
+                <span class="inline-block bg-sky-400/20 text-sky-200 text-xs font-semibold px-3 py-1 rounded-full mb-3 border border-sky-300/30">
+                    Germany • Umschulung Fachinformatiker
                 </span>
-
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight">
-                    Hi, I'm <span class="text-sky-400">Yane</span> 👋
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
+                    Hi, I'm Yane
                 </h1>
-
-                <p class="text-base sm:text-lg text-slate-300 leading-relaxed">
-                    I'm currently doing my <strong class="text-white">Umschulung (retraining)</strong> to become a <strong class="text-white">Fachinformatiker</strong> in Germany, and I'm learning something new every day.
+                <p class="text-lg text-sky-100 leading-relaxed">
+                    I'm currently doing my <strong>Umschulung (retraining)</strong> to become a <strong>Fachinformatiker</strong> in Germany, and I'm learning something new every day.
                 </p>
-
-                <div class="flex flex-wrap gap-3 pt-2">
-                    <a href="#projects" class="px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm transition">
-                        My Projects
-                    </a>
-                    <a href="mailto:jane.laboski@gmail.com" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-medium text-sm transition">
-                        📧 jane.laboski@gmail.com
-                    </a>
-                </div>
+                <a href="mailto:jane.laboski@gmail.com" class="kontakt-kopce">
+                    📧 jane.laboski@gmail.com
+                </a>
             </div>
 
-            <!-- Твојата слика -->
-            <div class="profil-ramka shrink-0">
-                <img src="profil.png" alt="Yane Laboski">
+            <!-- СЛИКА ОД ДЕСНА СТРАНА -->
+            <div class="hero-slika">
+                <img src="profil.png" alt="Laboski Yane">
             </div>
         </section>
 
-        <!-- WHAT I KNOW + LANGUAGES (2 колони) -->
-        <section id="skills" class="grid grid-cols-1 md:grid-cols-12 gap-6">
-            
-            <!-- What I Know (7 колони) -->
-            <div class="md:col-span-7 karticka flex flex-col justify-between space-y-6">
-                <div>
-                    <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                        <span class="text-sky-400">#</span> What I Know
-                    </h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800">
-                            <h3 class="font-bold text-sky-400 text-sm">WordPress</h3>
-                            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Building and managing websites.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800">
-                            <h3 class="font-bold text-indigo-400 text-sm">HTML &amp; CSS</h3>
-                            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Structure and styling of web pages.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800">
-                            <h3 class="font-bold text-emerald-400 text-sm">Hardware</h3>
-                            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Building, fixing and understanding PCs.</p>
-                        </div>
-                    </div>
-                </div>
+        <!-- КАРТИЧКИ ЗА ТЕКСТОТ -->
+        <section class="karticki-grid">
 
-                <div class="pt-4 border-t border-slate-800 text-sm text-slate-300">
-                    <strong class="text-white">Outside of tech:</strong> Watching series, reading Comics and playing video games when I have time.
-                </div>
-            </div>
-
-            <!-- Languages I Speak (5 колони) -->
-            <div class="md:col-span-5 karticka">
-                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                    <span class="text-sky-400">#</span> Languages I Speak
-                </h2>
-                <ul class="space-y-2.5 text-sm">
-                    <li class="flex justify-between items-center p-2.5 rounded-xl bg-slate-950/60 border border-slate-800">
-                        <span>🇲🇰 Macedonian</span>
-                        <span class="text-xs text-emerald-400 font-semibold">Native</span>
-                    </li>
-                    <li class="flex justify-between items-center p-2.5 rounded-xl bg-slate-950/60 border border-slate-800">
-                        <span>🇬🇧 English</span>
-                        <span class="text-xs text-slate-400">Fluent</span>
-                    </li>
-                    <li class="flex justify-between items-center p-2.5 rounded-xl bg-slate-950/60 border border-slate-800">
-                        <span>🇩🇪 German</span>
-                        <span class="text-xs text-slate-400">Umschulung</span>
-                    </li>
-                    <li class="flex justify-between items-center p-2.5 rounded-xl bg-slate-950/60 border border-slate-800">
-                        <span>🇮🇹 Italian</span>
-                        <span class="text-xs text-slate-400">Conversational</span>
-                    </li>
-                    <li class="flex justify-between items-center p-2.5 rounded-xl bg-slate-950/60 border border-slate-800">
-                        <span>🗣️ Serbo-Croatian</span>
-                        <span class="text-xs text-slate-400">Fluent</span>
-                    </li>
+            <!-- Картичка 1: What I know -->
+            <div id="skills" class="karticka">
+                <h2>💻 What I Know</h2>
+                <ul class="lista-stavki">
+                    <li><strong>WordPress:</strong> Building and managing websites</li>
+                    <li><strong>HTML &amp; CSS:</strong> Structure and styling of web pages</li>
+                    <li><strong>Hardware:</strong> Building, fixing and understanding PCs</li>
                 </ul>
             </div>
 
-        </section>
-
-        <!-- WHAT I'M LEARNING RIGHT NOW -->
-        <section id="learning" class="karticka">
-            <h2 class="text-xl font-bold text-white mb-5 flex items-center gap-2">
-                <span class="text-sky-400">#</span> What I'm Learning Right Now
-            </h2>
-            <div class="flex flex-wrap gap-2.5">
-                <span class="bedz">Networking (IPv4, IPv6, subnetting)</span>
-                <span class="bedz">Git and version control</span>
-                <span class="bedz">XML and web basics</span>
-                <span class="bedz">Python</span>
-                <span class="bedz">SQL</span>
-                <span class="bedz">Databases</span>
-                <span class="bedz">PHP, HTML, CSS</span>
-                <span class="bedz">JSON</span>
-                <span class="bedz">Logic</span>
-                <span class="bedz">Virtualization</span>
-                <span class="bedz">Hardware</span>
-                <span class="bedz">OS</span>
-                <span class="bedz">Servers</span>
+            <!-- Картичка 2: Education -->
+            <div id="education" class="karticka">
+                <h2>🎓 Education</h2>
+                <ul class="lista-stavki">
+                    <li><strong>Retraining (Umschulung):</strong> Fachinformatiker in Germany</li>
+                    <li><strong>University:</strong> Studied Informatics at the European University - Republic of North Macedonia (EURM)</li>
+                </ul>
             </div>
-        </section>
 
-        <!-- PROJECTS (3 картички) -->
-        <section id="projects" class="space-y-5">
-            <h2 class="text-2xl font-bold text-white flex items-center gap-2">
-                <span class="text-sky-400">#</span> Projects
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <article class="karticka flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-mono text-sky-400">01</span>
-                        <h3 class="text-lg font-bold text-white mt-2">Yane's Aggregator</h3>
-                        <p class="text-sm text-slate-400 mt-2 leading-relaxed">A tech news aggregator collecting the latest IT and technology stories.</p>
-                    </div>
-                    <div class="mt-5 pt-3 border-t border-slate-800 text-xs text-sky-400 font-semibold">Tech News</div>
-                </article>
-
-                <article class="karticka flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-mono text-emerald-400">02</span>
-                        <h3 class="text-lg font-bold text-white mt-2">CryptoFun24</h3>
-                        <p class="text-sm text-slate-400 mt-2 leading-relaxed">Live Crypto News &amp; Market Dashboard for tracking cryptocurrency prices and updates.</p>
-                    </div>
-                    <div class="mt-5 pt-3 border-t border-slate-800 text-xs text-emerald-400 font-semibold">Market Dashboard</div>
-                </article>
-
-                <article class="karticka flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-mono text-indigo-400">03</span>
-                        <h3 class="text-lg font-bold text-white mt-2">Latest News Aggregator</h3>
-                        <p class="text-sm text-slate-400 mt-2 leading-relaxed">A news aggregator that collects the latest headlines in one place.</p>
-                    </div>
-                    <div class="mt-5 pt-3 border-t border-slate-800 text-xs text-indigo-400 font-semibold">Headlines</div>
-                </article>
+            <!-- Картичка 3: Languages I speak -->
+            <div class="karticka">
+                <h2>🌍 Languages I Speak</h2>
+                <ul class="lista-stavki">
+                    <li>🇲🇰 Macedonian (native)</li>
+                    <li>🇬🇧 English</li>
+                    <li>🇮🇹 Italian</li>
+                    <li>🇩🇪 German</li>
+                    <li>🗣️ Serbo-Croatian</li>
+                </ul>
             </div>
-        </section>
 
-        <!-- EDUCATION (2 колони) -->
-        <section id="education" class="space-y-5">
-            <h2 class="text-2xl font-bold text-white flex items-center gap-2">
-                <span class="text-sky-400">#</span> Education
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="karticka">
-                    <span class="text-xs text-sky-400 font-semibold uppercase">Germany • Ongoing</span>
-                    <h3 class="text-lg font-bold text-white mt-1">Retraining (Umschulung) to Fachinformatiker</h3>
-                    <p class="text-sm text-slate-400 mt-2">IT Systems, Networking, Databases &amp; Software Development.</p>
-                </div>
-                <div class="karticka">
-                    <span class="text-xs text-slate-400 font-semibold uppercase">University</span>
-                    <h3 class="text-lg font-bold text-white mt-1">Informatics</h3>
-                    <p class="text-sm text-slate-400 mt-2">European University – Republic of North Macedonia (EURM)</p>
+            <!-- Картичка 4: What I'm learning right now -->
+            <div id="learning" class="karticka">
+                <h2>🚀 What I'm Learning Right Now</h2>
+                <div>
+                    <span class="tag">Networking (IPv4, IPv6, subnetting)</span>
+                    <span class="tag">Git and version control</span>
+                    <span class="tag">XML and web basics</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Databases</span>
+                    <span class="tag">PHP, HTML, CSS</span>
+                    <span class="tag">JSON</span>
+                    <span class="tag">Logic</span>
+                    <span class="tag">Virtualization</span>
+                    <span class="tag">Hardware</span>
+                    <span class="tag">OS</span>
+                    <span class="tag">Servers</span>
                 </div>
             </div>
-        </section>
 
-        <!-- GET IN TOUCH -->
-        <section id="contact" class="karticka text-center py-10 space-y-4">
-            <h2 class="text-2xl sm:text-3xl font-bold text-white">Get in Touch</h2>
-            <p class="text-slate-400 text-sm sm:text-base">Feel free to reach out for collaboration or IT opportunities.</p>
-            <div>
-                <a href="mailto:jane.laboski@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm transition">
-                    <span>📧</span> jane.laboski@gmail.com
-                </a>
+            <!-- Картичка 5: Projects -->
+            <div id="projects" class="karticka">
+                <h2>🛠️ Projects</h2>
+                <ul class="lista-stavki">
+                    <li><strong>Yane's Aggregator:</strong> A tech news aggregator</li>
+                    <li><strong>CryptoFun24:</strong> Live Crypto News &amp; Market Dashboard</li>
+                    <li><strong>Latest News Aggregator:</strong> Collects the latest headlines in one place</li>
+                </ul>
             </div>
+
+            <!-- Картичка 6: Outside of tech -->
+            <div class="karticka">
+                <h2>🎮 Outside of Tech</h2>
+                <p class="text-sky-100 text-sm leading-relaxed">
+                    I like watching series, reading Comics and when I have time, playing video games.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/15 text-sm text-sky-200">
+                    <strong>Get in touch:</strong><br>
+                    📧 jane.laboski@gmail.com
+                </div>
+            </div>
+
         </section>
 
-    </main>
-
-    <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
-        © 2026 Yane Laboski
-    </footer>
+    </div>
 
 </body>
 </html>
