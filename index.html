@@ -103,7 +103,7 @@
         }
 
         .lista-stavki li {
-            padding: 6px 0;
+            padding: 8px 0;
             font-size: 15px;
             color: #e0f2fe;
             border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
@@ -111,6 +111,16 @@
 
         .lista-stavki li:last-child {
             border-bottom: none;
+        }
+
+        .lista-stavki a {
+            color: #7dd3fc;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .lista-stavki a:hover {
+            color: #ffffff;
         }
 
         .tag {
@@ -125,12 +135,13 @@
         }
 
         .kontakt-kopce {
-            display: inline-block;
-            margin-top: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             background: #38bdf8;
             color: #082f49;
             font-weight: bold;
-            padding: 12px 24px;
+            padding: 12px 22px;
             border-radius: 12px;
             text-decoration: none;
             transition: background 0.2s ease;
@@ -138,6 +149,25 @@
 
         .kontakt-kopce:hover {
             background: #7dd3fc;
+        }
+
+        .linkedin-kopce {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.14);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            font-weight: bold;
+            padding: 12px 22px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .linkedin-kopce:hover {
+            background: rgba(56, 189, 248, 0.25);
+            border-color: #7dd3fc;
         }
     </style>
 </head>
@@ -160,7 +190,7 @@
 
     <div class="glaven-kontejner">
 
-        <!-- ГОРЕН БЛОК: Текст од лева страна, Слика од десна страна -->
+        <!-- ГОРЕН БЛОК: Текст лево (мејлот горе, LinkedIn веднаш под него), Слика десно -->
         <section class="hero-blok">
             <div class="hero-tekst">
                 <span class="inline-block bg-sky-400/20 text-sky-200 text-xs font-semibold px-3 py-1 rounded-full mb-3 border border-sky-300/30">
@@ -172,9 +202,16 @@
                 <p class="text-lg text-sky-100 leading-relaxed">
                     I'm currently doing my <strong>Umschulung (retraining)</strong> to become a <strong>Fachinformatiker</strong> in Germany, and I'm learning something new every day.
                 </p>
-                <a href="mailto:jane.laboski@gmail.com" class="kontakt-kopce">
-                    📧 jane.laboski@gmail.com
-                </a>
+
+                <!-- Мејлот горе, а LinkedIn веднаш под него -->
+                <div class="flex flex-col items-start gap-3 mt-5">
+                    <a href="mailto:jane.laboski@gmail.com" class="kontakt-kopce">
+                        📧 jane.laboski@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/yane-laboski-63569b6?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="linkedin-kopce">
+                        💼 LinkedIn
+                    </a>
+                </div>
             </div>
 
             <!-- СЛИКА ОД ДЕСНА СТРАНА -->
@@ -241,9 +278,18 @@
             <div id="projects" class="karticka">
                 <h2>🛠️ Projects</h2>
                 <ul class="lista-stavki">
-                    <li><strong>Yane's Aggregator:</strong> A tech news aggregator</li>
-                    <li><strong>CryptoFun24:</strong> Live Crypto News &amp; Market Dashboard</li>
-                    <li><strong>Latest News Aggregator:</strong> Collects the latest headlines in one place</li>
+                    <li>
+                        <strong>Yane's Aggregator:</strong> A tech news aggregator —
+                        <a href="https://techynews.jane-laboski.workers.dev/#top" target="_blank" rel="noopener noreferrer">Open Site →</a>
+                    </li>
+                    <li>
+                        <strong>CryptoFun24:</strong> Live Crypto News &amp; Market Dashboard —
+                        <a href="https://cryptofun24.github.io/" target="_blank" rel="noopener noreferrer">Open Site →</a>
+                    </li>
+                    <li>
+                        <strong>Latest News Aggregator:</strong> Collects the latest headlines in one place —
+                        <a href="https://forfun81.github.io/#top" target="_blank" rel="noopener noreferrer">Open Site →</a>
+                    </li>
                 </ul>
             </div>
 
@@ -253,9 +299,12 @@
                 <p class="text-sky-100 text-sm leading-relaxed">
                     I like watching series, reading Comics and when I have time, playing video games.
                 </p>
-                <div class="mt-4 pt-3 border-t border-white/15 text-sm text-sky-200">
-                    <strong>Get in touch:</strong><br>
-                    📧 jane.laboski@gmail.com
+                <div class="mt-4 pt-3 border-t border-white/15 text-sm text-sky-200 space-y-1.5">
+                    <div><strong>Get in touch:</strong></div>
+                    <div>📧 jane.laboski@gmail.com</div>
+                    <div>
+                        💼 <a href="https://www.linkedin.com/in/yane-laboski-63569b6?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="underline hover:text-sky-300">LinkedIn Profile</a>
+                    </div>
                 </div>
             </div>
 
