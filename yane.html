@@ -4,19 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yane Laboski | Aspiring Fachinformatiker</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Поврзување со локално генерираниот Tailwind CSS фајл -->
+    <link href="./src/output.css" rel="stylesheet">
 </head>
 <body class="bg-slate-950 text-slate-200 antialiased selection:bg-sky-500 selection:text-white">
 
@@ -86,4 +75,164 @@
 
                 <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/40 transition">
                     <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold mb-4">&lt;/&gt;</div>
-                    <h3 class="text-lg font-semibold
+                    <h3 class="text-lg font-semibold text-white mb-2">HTML &amp; CSS</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Clean semantic structure and modern responsive styling of web pages.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/40 transition">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold mb-4">PC</div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Hardware</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Building, troubleshooting, fixing, and understanding PC components.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What I'm Learning Right Now -->
+        <section id="learning" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-sky-400">#</span> What I'm Learning Right Now
+                </h2>
+                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Current Curriculum</span>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
+                <div class="flex flex-wrap gap-2.5">
+                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700/80 text-sm text-sky-300 font-medium">Networking (IPv4, IPv6, Subnetting)</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700/80 text-sm text-emerald-300 font-medium">Git &amp; Version Control</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700/80 text-sm text-amber-300 font-medium">Python</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700/80 text-sm text-indigo-300 font-medium">SQL &amp; Databases</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700/80 text-sm text-slate-200">PHP, HTML &amp; CSS</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700/80 text-sm text-slate-200">XML &amp; Web Basics</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700/80 text-sm text-slate-200">JSON</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700/80 text-sm text-slate-200">Logic</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700/80 text-sm text-purple-300 font-medium">Virtualization</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700/80 text-sm text-slate-200">Hardware</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700/80 text-sm text-slate-200">Operating Systems (OS)</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700/80 text-sm text-rose-300 font-medium">Servers</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Languages -->
+        <section id="education" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Education -->
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-sky-400">#</span> Education
+                </h2>
+                <div class="space-y-4">
+                    <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800">
+                        <span class="text-xs font-semibold text-sky-400 uppercase tracking-wider">Ongoing • Germany</span>
+                        <h3 class="text-base font-semibold text-white mt-1">Retraining (Umschulung) to Fachinformatiker</h3>
+                        <p class="text-sm text-slate-400 mt-1">Focus on IT systems, networking, software development, and infrastructure.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800">
+                        <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">University Studies</span>
+                        <h3 class="text-base font-semibold text-white mt-1">Informatics</h3>
+                        <p class="text-sm text-slate-400 mt-1">European University – Republic of North Macedonia (EURM)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages & Outside of Tech -->
+            <div class="space-y-6">
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <span class="text-sky-400">#</span> Languages I Speak
+                    </h2>
+                    <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 grid grid-cols-2 gap-3 text-sm">
+                        <div class="flex items-center gap-2 text-slate-200"><span>🇲🇰</span> Macedonian <span class="text-xs text-slate-500">(Native)</span></div>
+                        <div class="flex items-center gap-2 text-slate-200"><span>🇬🇧</span> English</div>
+                        <div class="flex items-center gap-2 text-slate-200"><span>🇩🇪</span> German</div>
+                        <div class="flex items-center gap-2 text-slate-200"><span>🇮🇹</span> Italian</div>
+                        <div class="flex items-center gap-2 text-slate-200 col-span-2"><span>🗣️</span> Serbo-Croatian</div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                        <span class="text-sky-400">#</span> Outside of Tech
+                    </h2>
+                    <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 text-sm text-slate-300 leading-relaxed">
+                        🎬 Watching series &nbsp;•&nbsp; 📚 Reading comics &nbsp;•&nbsp; 🎮 Playing video games when I have free time
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="space-y-6">
+            <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                <span class="text-sky-400">#</span> Projects
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <article class="flex flex-col justify-between p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/40 transition">
+                    <div>
+                        <span class="text-xs font-mono text-sky-400">01 / News Feed</span>
+                        <h3 class="text-lg font-bold text-white mt-2">Yane's Aggregator</h3>
+                        <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                            A dedicated tech news aggregator designed to keep up with the latest developments in IT and software.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-500">
+                        <span>Web / Aggregation</span>
+                        <span class="text-sky-400 font-medium">GitHub Repo →</span>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="flex flex-col justify-between p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/40 transition">
+                    <div>
+                        <span class="text-xs font-mono text-emerald-400">02 / FinTech &amp; Data</span>
+                        <h3 class="text-lg font-bold text-white mt-2">CryptoFun24</h3>
+                        <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                            Live Crypto News &amp; Market Dashboard tracking real-time cryptocurrency updates and market movements.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-500">
+                        <span>Live Dashboard</span>
+                        <span class="text-emerald-400 font-medium">GitHub Repo →</span>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="flex flex-col justify-between p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/40 transition">
+                    <div>
+                        <span class="text-xs font-mono text-indigo-400">03 / Headlines</span>
+                        <h3 class="text-lg font-bold text-white mt-2">Latest News Aggregator</h3>
+                        <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                            A streamlined news aggregator that collects and organizes the latest headlines in one convenient place.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-500">
+                        <span>News Feed</span>
+                        <span class="text-indigo-400 font-medium">GitHub Repo →</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-sky-950/40 border border-slate-800 text-center space-y-4">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">Get in Touch</h2>
+            <p class="text-slate-400 max-w-md mx-auto text-sm sm:text-base">
+                Have a question, want to collaborate on a project, or just want to connect? Feel free to reach out!
+            </p>
+            <div class="pt-2">
+                <a href="mailto:jane.laboski@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm transition">
+                    <span>📧</span> jane.laboski@gmail.com
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-500">
+        <p>© 2026 Yane Laboski • Built with HTML &amp; Tailwind CSS</p>
+    </footer>
+
+</body>
+</html>
