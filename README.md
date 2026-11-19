@@ -19,6 +19,16 @@ I'm currently doing my **Umschulung (retraining) to become a Fachinformatiker** 
 - Networking (IPv4, IPv6, subnetting)
 - Git and version control
 - XML and web basics
+- Python
+- SQL
+- Data Base
+- PHP, HTML, CSS
+- JSON
+- Logik
+- Virtualization
+- Harware
+- OS 
+- Servers
 
 ## Languages I speak
 
