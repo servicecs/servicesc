@@ -137,7 +137,7 @@
         .kontakt-kopce {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             background: #38bdf8;
             color: #082f49;
             font-weight: bold;
@@ -154,7 +154,7 @@
         .sekundarno-kopce {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             background: rgba(255, 255, 255, 0.14);
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.35);
@@ -205,13 +205,23 @@
 
                 <div class="flex flex-col items-start gap-3 mt-5">
                     <a href="mailto:jane.laboski@gmail.com" class="kontakt-kopce">
-                        📧 jane.laboski@gmail.com
+                        <span>jane.laboski@gmail.com</span>
                     </a>
+
+                    <!-- LinkedIn копче со правилна LinkedIn икона -->
                     <a href="https://www.linkedin.com/in/yane-laboski-63569b6" target="_blank" rel="noopener noreferrer" class="sekundarno-kopce">
-                        💼 LinkedIn
+                        <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z" />
+                        </svg>
+                        <span>LinkedIn</span>
                     </a>
+
+                    <!-- GitHub копче со правилна GitHub икона -->
                     <a href="https://github.com/servicecs/servicesc/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="sekundarno-kopce">
-                        🐙 GitHub
+                        <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 2A10 10 0 0 0 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.52 21.27 9.52 21C9.52 20.77 9.51 19.98 9.51 19.15C7 19.61 6.35 18.53 6.15 17.97C6.04 17.68 5.55 16.8 5.12 16.56C4.77 16.37 4.27 15.9 5.11 15.89C5.9 15.88 6.46 16.62 6.65 16.92C7.55 18.43 8.98 18.01 9.56 17.75C9.65 17.1 9.91 16.66 10.2 16.41C7.97 16.16 5.64 15.3 5.64 11.43C5.64 10.33 6.03 9.42 6.67 8.71C6.57 8.46 6.22 7.42 6.77 6.02C6.77 6.02 7.61 5.75 9.52 7.04C10.32 6.82 11.17 6.71 12.02 6.71C12.87 6.71 13.72 6.82 14.52 7.04C16.43 5.74 17.27 6.02 17.27 6.02C17.82 7.42 17.47 8.46 17.37 8.71C18.01 9.42 18.4 10.32 18.4 11.43C18.4 15.31 16.06 16.16 13.83 16.41C14.2 16.72 14.52 17.32 14.52 18.26C14.52 19.6 14.51 20.67 14.51 21C14.51 21.27 14.69 21.59 15.19 21.5C19.13 20.16 22 16.41 22 12A10 10 0 0 0 12 2Z" />
+                        </svg>
+                        <span>GitHub</span>
                     </a>
                 </div>
             </div>
@@ -227,7 +237,7 @@
 
             <!-- Картичка 1: What I know -->
             <div id="skills" class="karticka">
-                <h2>💻 What I Know</h2>
+                <h2>What I Know</h2>
                 <ul class="lista-stavki">
                     <li><strong>WordPress:</strong> Building and managing websites</li>
                     <li><strong>HTML &amp; CSS:</strong> Structure and styling of web pages</li>
@@ -237,7 +247,7 @@
 
             <!-- Картичка 2: Education -->
             <div id="education" class="karticka">
-                <h2>🎓 Education</h2>
+                <h2>Education</h2>
                 <ul class="lista-stavki">
                     <li><strong>Retraining (Umschulung):</strong> Fachinformatiker in Germany</li>
                     <li><strong>University:</strong> Studied Informatics at the European University - Republic of North Macedonia (EURM)</li>
@@ -246,19 +256,19 @@
 
             <!-- Картичка 3: Languages I speak -->
             <div class="karticka">
-                <h2>🌍 Languages I Speak</h2>
+                <h2>Languages I Speak</h2>
                 <ul class="lista-stavki">
-                    <li>🇲🇰 Macedonian (native)</li>
-                    <li>🇬🇧 English</li>
-                    <li>🇮🇹 Italian</li>
-                    <li>🇩🇪 German</li>
-                    <li>🗣️ Serbo-Croatian</li>
+                    <li>Macedonian (native)</li>
+                    <li>English</li>
+                    <li>Italian</li>
+                    <li>German</li>
+                    <li>Serbo-Croatian</li>
                 </ul>
             </div>
 
             <!-- Картичка 4: What I'm learning right now -->
             <div id="learning" class="karticka">
-                <h2>🚀 What I'm Learning Right Now</h2>
+                <h2>What I'm Learning Right Now</h2>
                 <div>
                     <span class="tag">Networking (IPv4, IPv6, subnetting)</span>
                     <span class="tag">Git and version control</span>
@@ -278,7 +288,7 @@
 
             <!-- Картичка 5: Projects -->
             <div id="projects" class="karticka">
-                <h2>🛠️ Projects</h2>
+                <h2>Projects</h2>
                 <ul class="lista-stavki">
                     <li>
                         <strong>Yane's Aggregator:</strong> A tech news aggregator —
@@ -297,18 +307,28 @@
 
             <!-- Картичка 6: Outside of tech -->
             <div class="karticka">
-                <h2>🎮 Outside of Tech</h2>
+                <h2>Outside of Tech</h2>
                 <p class="text-sky-100 text-sm leading-relaxed">
                     I like watching series, reading Comics and when I have time, playing video games.
                 </p>
-                <div class="mt-4 pt-3 border-t border-white/15 text-sm text-sky-200 space-y-1.5">
+                <div class="mt-4 pt-3 border-t border-white/15 text-sm text-sky-200 space-y-2">
                     <div><strong>Get in touch:</strong></div>
-                    <div>📧 jane.laboski@gmail.com</div>
+                    <div>jane.laboski@gmail.com</div>
                     <div>
-                        💼 <a href="https://www.linkedin.com/in/yane-laboski-63569b6" target="_blank" rel="noopener noreferrer" class="underline hover:text-sky-300">LinkedIn Profile</a>
+                        <a href="https://www.linkedin.com/in/yane-laboski-63569b6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 underline hover:text-sky-300">
+                            <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z" />
+                            </svg>
+                            <span>LinkedIn Profile</span>
+                        </a>
                     </div>
                     <div>
-                        🐙 <a href="https://github.com/servicecs/servicesc/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="underline hover:text-sky-300">GitHub</a>
+                        <a href="https://github.com/servicecs/servicesc/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 underline hover:text-sky-300">
+                            <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2A10 10 0 0 0 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.52 21.27 9.52 21C9.52 20.77 9.51 19.98 9.51 19.15C7 19.61 6.35 18.53 6.15 17.97C6.04 17.68 5.55 16.8 5.12 16.56C4.77 16.37 4.27 15.9 5.11 15.89C5.9 15.88 6.46 16.62 6.65 16.92C7.55 18.43 8.98 18.01 9.56 17.75C9.65 17.1 9.91 16.66 10.2 16.41C7.97 16.16 5.64 15.3 5.64 11.43C5.64 10.33 6.03 9.42 6.67 8.71C6.57 8.46 6.22 7.42 6.77 6.02C6.77 6.02 7.61 5.75 9.52 7.04C10.32 6.82 11.17 6.71 12.02 6.71C12.87 6.71 13.72 6.82 14.52 7.04C16.43 5.74 17.27 6.02 17.27 6.02C17.82 7.42 17.47 8.46 17.37 8.71C18.01 9.42 18.4 10.32 18.4 11.43C18.4 15.31 16.06 16.16 13.83 16.41C14.2 16.72 14.52 17.32 14.52 18.26C14.52 19.6 14.51 20.67 14.51 21C14.51 21.27 14.69 21.59 15.19 21.5C19.13 20.16 22 16.41 22 12A10 10 0 0 0 12 2Z" />
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
                     </div>
                 </div>
             </div>
